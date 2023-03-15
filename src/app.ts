@@ -33,6 +33,10 @@ app.use(session({
     }),
 }));
 
+app.get('/', (req, res) => {
+    const url = 'https://documenter.getpostman.com/view/10653175/2s93JwPhja'
+    res.redirect(url)
+})
 app.use("/api/notes", requiresAuth, noteRoutes)
 app.use("/api/users", userRoutes)
 
